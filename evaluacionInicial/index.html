@@ -29,32 +29,40 @@
                                         <div class="col-12">
                                             <div class="mb-4">
                                                 <input type="text" class="form-control rounded" id="title"
-                                                    placeholder="Title">
+                                                    placeholder="Title" name="title">
+                                                <div class="invalid-feedback">
+                                                    <p>Por favor introduce un título correcto</p>
+                                                </div>
                                             </div>
                                             <div class="mb-4 d-flex">
                                                 <input type="text" id="slug" class="form-control form-control-lg"
-                                                    placeholder="Enter the Slug" />
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <p id="result_message"></p>
-                                                    </div>
-                                                </div>
+                                                    placeholder="Enter the Slug" name="slug" />
                                                 <button class="bg-warning rounded p-2" type="submit" id="createURL">
                                                     <i class="bi bi-list"></i>
                                                 </button>
-
+                                            </div>
+                                            <div class="invalid-feedback mb-4">
+                                                <p>Por favor introduce una URL</p>
                                             </div>
                                             <div class="mb-4">
-                                                <textarea class="form-control rounded-3" id="newsDescription" rows="4"
-                                                    placeholder="Description"></textarea>
+                                                <textarea class="form-control rounded-3" id="description" rows="4"
+                                                    placeholder="Description" name="description"></textarea>
+                                                <div class="invalid-feedback">
+                                                    <p>Por favor introduce un título correcto</p>
+                                                </div>
                                             </div>
                                             <div class="mb-4 d-flex">
-                                                <input type="text" class="form-control rounded" id="suma"
-                                                    placeholder="">
+                                                <input type="text" class="form-control rounded" id="suma" name="suma">
                                                 <input type="text" class="form-control rounded" id="resultSuma"
-                                                    placeholder="Escriba el resultado de la suma">
+                                                    placeholder="Escriba el resultado de la suma" name="resultSuma">
                                                 <button class="bg-warning rounded p-2" type="submit" id="createURL">
                                                     <p>Comprobar</p>
+                                                </button>
+                                            </div>
+                                            <div class="mb-4 d-flex">
+                                                <button class="bg-warning rounded p-2" id="btnSave" name="btnsave"
+                                                    type="button">
+                                                    Guardar
                                                 </button>
                                             </div>
                                         </div>

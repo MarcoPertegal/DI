@@ -1,20 +1,31 @@
 $(document).ready(function () {
+    $(document).on('click', '#btnSave', function () {
+
+        var title = $('#title').val();
+        var description = $('#description').val();
+        var url = $('#slug').val();
+
+        if (title == '') {
+            $('#title').addClass('is-invalid');
+        }
+
+        if (description == '') {
+            $('#description').addClass('is-invalid');
+        }
+
+        if (url == '') {
+            $('#slug').addClass('is-invalid');
+        }
+
+    });
+
 
     $(document).on('click', '#createURL', function () {
 
         var url = $('#slug').val();
 
-        url.replace("/", "-");
+        var url1 = url.toLowerCase().replace(' ', '-');//trimp es para quitar espacios en blanco delante y detras
 
-        return url;
-
+        $('#slug').val(url1);
     });
-
-    /*
-    $(document).on('load', '#suma', function () {
-
-        var num1 = Math.random;
-        var num2 = Math.random;
-        return num1 + num2;
-    });*/
 });
