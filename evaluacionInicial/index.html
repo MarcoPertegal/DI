@@ -51,13 +51,14 @@
                                                     <p>Por favor introduce un título correcto</p>
                                                 </div>
                                             </div>
-                                            <div class="mb-4 d-flex">
-                                                <input type="text" class="form-control rounded" id="suma" name="suma">
-                                                <input type="text" class="form-control rounded" id="resultSuma"
-                                                    placeholder="Escriba el resultado de la suma" name="resultSuma">
-                                                <button class="bg-warning rounded p-2" type="submit" id="createURL">
-                                                    <p>Comprobar</p>
-                                                </button>
+                                            <div class="mb-3">
+                                                <label class="form-check-label" for="robot-check">Introduce el resultado
+                                                    de <span id="n1"></span>+<span id="n2"></span></label>
+                                                <input type="number" class="form-control" id="robot-check"
+                                                    name="robot-check">
+                                                <div class="invalid-feedback">
+                                                    Resultado incorrecto
+                                                </div>
                                             </div>
                                             <div class="mb-4 d-flex">
                                                 <button class="bg-warning rounded p-2" id="btnSave" name="btnsave"
