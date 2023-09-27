@@ -2,16 +2,17 @@ $(document).ready(function () {
     $.ajax({
         url: 'https://swapi.dev/api/people',
         type: 'GET'
-    }).done(function (resp) {
-        var listadoStarWars = resp.results;
-        listadoStarWars.forEach(function (personaje) {
+    }).done(function (resp) {//resp es la variable que devuele el resultado de la consulta
+        var listadoStarWars = resp.results;//results sirve para extraer el resultado de la consulta y guardarlo
+        listadoStarWars.forEach(function (personaje, index) {//index es un contador
             //var template = '<p><h1>' +starwars.name + '</h1></p>';
             //var template = `<p><h1>${starwars.name}</h1></p>`;
+            var i = index + 1;
             var template = `
                 <div class="col-md-3 col-lg-4 mt-5 mb-5">
                     <div class="card bg-dark text-center" data-bs-toggle="modal" data-bs-target="#Modal1"
                         style="width: 18rem;" type="button">
-                        <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/.jpg"
+                        <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/characters/${i}.jpg"
                             alt="Card image cap">
                         <div class="card-body pb-1">
                             <h5 class="card-title fw-bold text-warning">${personaje.name}</h5>
@@ -31,16 +32,18 @@ $(document).ready(function () {
                             </div>
                             <div class="d-flex">
                                 <div style="margin-right: 12px;">
-                                    <i class="bi bi-gender-ambiguous"></i>
+                                    ${verificarGenero(personaje.gender)}
                                 </div>
                                 <p class="card-text">${personaje.gender}</p>
                             </div>
                         </div>
                     </div>
                 </div>`;
-            $('#lista-starwars').append(template);
+            $('#lista-starwars').append(template);//esto sirbe para seleccionar el codigo donde va a ir la template
         });
     });
+
+    //no esta acababo
     $(document).on('click', '.people', function () {
         var starwarsid = $(this).attr('starwarsid');
 
@@ -55,4 +58,13 @@ $(document).ready(function () {
     });
 
     //funcion para que salga el icono de mas o fem 
+    function verificarGenero(gender) {
+        if (gender == 'male') {
+            return '<i class="bi bi-gender-male"></i>';
+        } else if (gender == 'female') {
+            return '<i class="bi bi-gender-female"></i>';
+        } else {
+            return '<i class="bi bi-gender-neuter"></i>';
+        }
+    }
 });
